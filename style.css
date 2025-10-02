@@ -1,0 +1,515 @@
+/* --- Variáveis de Cores --- */
+:root {
+    --primary-blue: #007bff;
+    --secondary-violet: #6f42c1;
+    --accent-green: #28a745;
+    --highlight-yellow: #ffc107;
+    --light-blue-bg: #f0f8ff;
+    --dark-text: #333333;
+    --darker-blue: #0056b3;
+    --darker-yellow: #e0a800;
+    --darker-green: #218838;
+    --white: #ffffff;
+}
+
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--white);
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--darker-blue);
+    line-height: 1.2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-violet);
+}
+
+/* --- Títulos de Seção Aprimorados --- */
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--primary-blue);
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%; /* Centraliza o elemento inline-block */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    width: 100px;
+    height: 5px;
+    background-color: var(--highlight-yellow); 
+    border-radius: 2px;
+}
+
+/* --- Header e Navegação --- */
+.header {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 0;
+}
+
+.header h1 {
+    font-size: 1.8em;
+    color: var(--secondary-violet); 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    justify-content: flex-end; 
+}
+
+nav a {
+    margin-left: 25px;
+    font-weight: 500;
+    color: var(--dark-text);
+    padding: 5px 0;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--highlight-yellow); 
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    background-color: var(--highlight-yellow);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    flex-shrink: 0;
+}
+
+.cta-button:hover {
+    background-color: var(--darker-yellow);
+    transform: translateY(-2px);
+}
+
+/* --- Seção HERO (Sobre Mim) --- */
+.hero {
+    padding: 100px 0; 
+    background: linear-gradient(to right, var(--light-blue-bg) 70%, var(--white) 30%); 
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; 
+}
+
+.hero-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+    min-width: 200px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    object-fit: cover;
+    width: 380px; 
+    height: 380px; 
+    border: 6px solid var(--secondary-violet); 
+}
+
+.tagline {
+    font-size: 1.3em;
+    color: var(--primary-blue); 
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.15em;
+    margin: 25px 0 35px;
+}
+
+/* --- ESTILOS DOS NOVOS BOTÕES DE CONTATO --- */
+.cta-group {
+    display: flex;
+    gap: 20px; 
+    margin-top: 40px;
+    flex-wrap: wrap; 
+}
+
+.main-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex-grow: 1; 
+    max-width: 300px; 
+}
+
+.primary-action {
+    background-color: var(--accent-green); 
+    color: var(--white);
+    border: 2px solid var(--accent-green);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); 
+}
+
+.primary-action:hover {
+    background-color: var(--darker-green);
+    border-color: var(--darker-green);
+    transform: translateY(-2px);
+}
+
+.secondary-action {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+}
+
+.secondary-action:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.secondary-action i {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+/* --- FIM DOS ESTILOS DE BOTÕES --- */
+
+
+/* --- Seção Terapia (TCC e Foco) --- */
+.terapia-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.abordagem-info {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    border: 1px solid var(--light-blue-bg);
+    border-radius: 10px;
+    background-color: #fcfcfc;
+}
+
+.abordagem-info i {
+    font-size: 2.5em;
+    color: var(--secondary-violet); 
+    margin-bottom: 15px;
+}
+
+.abordagem-info h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.abordagem-info p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+}
+
+.cards-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--light-blue-bg); 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 5px solid var(--primary-blue); 
+}
+
+.card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-bottom-color: var(--accent-green); 
+}
+
+.card i {
+    font-size: 3em;
+    color: var(--highlight-yellow); 
+    margin-bottom: 20px;
+}
+
+/* --- Seção Mapa (Localização) --- */
+.mapa-section {
+    padding: 60px 0 80px;
+    text-align: center;
+    background-color: var(--light-blue-bg);
+}
+
+.mapa-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    border: 5px solid var(--primary-blue);
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mapa-container iframe {
+    display: block; 
+}
+
+.endereco-texto {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: var(--dark-text);
+}
+
+/* --- Rodapé (Contato) --- */
+.footer {
+    background-color: var(--secondary-violet); 
+    color: var(--white);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-title {
+    color: var(--highlight-yellow); 
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.05em;
+    margin: 8px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--highlight-yellow); 
+}
+
+.social-links {
+    margin: 30px 0;
+}
+
+.social-links a {
+    color: var(--white);
+}
+
+.social-links a:hover {
+    color: var(--highlight-yellow);
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) { 
+    .header .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .header h1 {
+        margin-bottom: 15px;
+    }
+    nav {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 0.95em;
+    }
+    .cta-button {
+        margin-left: 0; 
+        margin-top: 10px;
+        width: auto;
+    }
+
+    .hero {
+        background: var(--light-blue-bg); 
+        padding: 60px 0;
+    }
+    
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        order: -1; 
+        margin-bottom: 40px;
+    }
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    .hero h2 {
+        font-size: 2.5em;
+    }
+    
+    .cta-group {
+        justify-content: center; 
+        margin-top: 30px;
+    }
+
+    .abordagem-info {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) { 
+    .header h1 {
+        font-size: 1.5em;
+    }
+    nav {
+        flex-direction: column; 
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
+    nav a {
+        margin: 0; 
+    }
+    .cta-button {
+        width: 90%;
+        max-width: 250px;
+    }
+    
+    .hero {
+        padding: 50px 0;
+    }
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    .description, .tagline {
+        font-size: 1em;
+    }
+
+    .cta-group {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    .main-cta {
+        max-width: 100%; 
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    
+    .section-title::after {
+        width: 70px;
+        height: 4px;
+        bottom: -10px;
+    }
+
+    .mapa-container {
+        height: 300px;
+    }
+
+    .footer-title {
+        font-size: 1.8em;
+    }
+    .social-links a {
+        font-size: 1.5em;
+        margin: 0 10px;
+    }
+}
+
+/* Animação do botão CTA (Pulse Effect) */
+.pulse {
+    animation: pulse-effect 0.6s ease-in-out;
+}
+
+@keyframes pulse-effect {
+    0% { transform: scale(1); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(255, 193, 7, 0.4); } /* Sombra amarela */
+    100% { transform: scale(1); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+}
